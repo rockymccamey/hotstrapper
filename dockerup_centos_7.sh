@@ -7,7 +7,7 @@ major=7
 echo -e "Please make sure you are in the root directory of hopstrapper/\n"
 
 echo -e "\n$distro $major: Building image..."
-docker build --rm -t "$distro$major" -f docker/"$distro$major"/Dockerfile .
+docker build --rm -t "$distro$major" -f "docker/$distro/$major/Dockerfile" .
 
 echo -e "\n$distro $major: Starting Container..."
 docker run -d --restart=always -p 8080:80  --name=centos7 "$distro$major"
