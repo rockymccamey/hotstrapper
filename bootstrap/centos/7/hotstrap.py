@@ -74,8 +74,8 @@ def configurate():
         directory = os.path.dirname('/' + file)
         if not os.path.exists(directory):
             os.makedirs(directory)
-        print('hotstrapper-master/bootstrapcentos/7/' + file + '\t->\t' + '/' + file)
-        shutil.move('hotstrapper-master/bootstrapcentos/7/' + file, '/' + file)
+        print('hotstrapper-master/bootstrap/centos/7/' + file + '\t->\t' + '/' + file)
+        shutil.move('hotstrapper-master/bootstrap/centos/7/' + file, '/' + file)
     for i in range(3):
         os.chmod('/' + file_list[i], 0700)
     for i in range(3, 6):
@@ -92,7 +92,7 @@ def jiggle_some_things():
     os.system('cat /etc/os-collect-config.conf')
     os.system('os-collect-config --one-time --debug')
     print('\nEnsuring everything is running & enabled on boot')
-    subprocess.call('hotstrapper-master/bootstrapcentos/7/start_config_agent.sh')
+    subprocess.call('hotstrapper-master/bootstrap/centos/7/start_config_agent.sh')
     print('\nCleaning up git folder')
     shutil.rmtree('hotstrapper-master/')
     os.system('rm -f master.zip')
