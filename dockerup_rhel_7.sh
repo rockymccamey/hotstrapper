@@ -13,11 +13,6 @@ echo -e "\n$distro $major: Starting Container..."
 docker run -d --restart=always -p 8080:80  --name=centos7 "$distro$major"
 
 echo -e "\n\n$distro $major: Container running.\nUse the following to check on progress:"
-echo -e "\tdocker logs $distro$major --follow"
+echo -e "\n\tdocker logs $distro$major --follow"
 echo -e "\tdocker logs $distro$major"
-# docker exec centos7
-#
-# # docker exec -it centos7 /bin/bash
-#
-# docker exec centos7 git clone https://github.com/kmcjunk/hotstrapper.git
-# docker exec centos7 python hotstrapper/rhel/7/hotstrap.py
+echo -e "\nto jump into the container:\n\tdocker exec -it $distro$major /bin/bash"
