@@ -20,6 +20,8 @@ echo "to tail -f: docker logs centos7 --follow"
 echo "to take a peak: docker logs centos7"
 ```
 
+### How it works
+It's fairly straight forward, the dockerup scripts will create an image with the docker file located in docker/$DISTRO/$MAJOR_VERSION and add in the bootstrap script located in $DISTRO/$MAJOR_VERSION. It will then run the script & output to docker logs.
 
 ## Removing test containers
 Run the dockerdown.sh to remove all docker containers related to hotstrapper:
