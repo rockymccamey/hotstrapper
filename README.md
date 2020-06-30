@@ -1,5 +1,8 @@
 # hotstrapper
 
+### Requirements
+Docker
+
 ## Testing bootstrap scripts
 Start by running the dockerup_ script in the root directory. This will build the image & run the hotstrap script against the container.
 
