@@ -14,8 +14,8 @@ VOLUME [ "/sys/fs/cgroup" ]
 RUN yum --enablerepo=extras install epel-release -y
 RUN yum install python-pip wget unzip -y
 
-ADD bootstrap/centos/7/hotstrap.py /root/hotstrap.py
+ADD bootstrap/centos/7/hotstrap.py hotstrap.py
 
-CMD ["/root/hotstrap.py"]
+CMD ["hotstrap.py"]
 
 ENTRYPOINT ["python", "-u"]
