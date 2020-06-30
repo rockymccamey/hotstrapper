@@ -12,9 +12,9 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 VOLUME [ "/sys/fs/cgroup" ]
 
 RUN yum --enablerepo=extras install epel-release -y
-RUN yum install python-pip git -y
+RUN yum install python-pip wget unzip -y
 
-ADD rhel/7/hotstrap.py /root/hotstrap.py
+ADD centos/7/hotstrap.py /root/hotstrap.py
 
 CMD ["/root/hotstrap.py"]
 
