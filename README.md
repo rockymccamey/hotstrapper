@@ -8,7 +8,7 @@ Start by running the dockerup_ script in the root directory. This will build the
 
 Example usage:
 ```bash
-$ ./dockerup_rhel_7.sh
+$ ./dockerup_centos_7.sh
 Please make sure you are in the root directory of hopstrapper/
 ```
 
@@ -34,9 +34,22 @@ centos7
 
 
 ## Adding new images
-Two things are required:
+Three things are required:
 #### A Dockerfile
 The Dockerfile must be located in docker/$DISTRO/$MAJOR_VERSION/Dockerfile
+You can use docker/centos7/Dockerfile as a reference
 
 #### Bootstrap script
 The bootstrap script must be located in $DISTRO/$MAJOR_VERSION
+You can use centos/7/hotstrap.py as a reference
+
+#### A dockerup file
+This is mostly to make things easier on us, you should be able to copy dockerup_centos_7.sh and change the distro / major variables to make it work for other images.
+
+#### Add to the dockerdown file
+If you create a dockerup script, be sure to add to the dockerdown.sh. Something along the lines of:
+
+```bash
+echo "Killing off $CONTAINER_NAME container..."
+docker rm --force $CONTAINER_NAME
+```
