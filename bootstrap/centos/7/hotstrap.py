@@ -42,7 +42,7 @@ def pip_down():
     try:
         for package in os_list:
             print('Installing ' + package)
-            os.system('pip install ' + package + '>/dev/null')
+            os.system('pip install ' + package)
             print('Successful')
     except:
         print('Unsuccessful')
