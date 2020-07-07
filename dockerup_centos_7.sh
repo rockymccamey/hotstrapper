@@ -10,7 +10,7 @@ echo -e "\n$distro $major: Building image..."
 docker build --rm -t "$distro$major" -f "docker/$distro/$major/Dockerfile" .
 
 echo -e "\n$distro $major: Starting Container..."
-docker run -d --restart=always -p 8080:80 -v /run -v /sys/fs/cgroup:/sys/fs/cgroup:ro  --name=centos7 "$distro$major"
+docker run --privileged -d --restart=always -p 8080:80 --name=centos7 -ti -v /sys/fs/cgroup:/sys/fs/cgroup "$distro$major"
 
 echo -e "\n\n$distro $major: Container running.\nUse the following to check on progress:"
 echo -e "\n\tdocker logs $distro$major --follow"
