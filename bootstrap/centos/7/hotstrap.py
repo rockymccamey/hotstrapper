@@ -7,7 +7,6 @@ import os
 import subprocess
 import shutil
 
-
 # Install required packages via yum
 def install_packages():
     package_list = ['python-pip',
