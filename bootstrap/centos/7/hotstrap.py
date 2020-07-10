@@ -12,6 +12,8 @@ def install_packages():
     package_list = ['python-pip',
                     'gcc',
                     'python-devel',
+                    'python3',
+                    'python3-devel',
                     'libyaml-devel',
                     'openssl-devel',
                     'libffi-devel',
@@ -24,6 +26,8 @@ def install_packages():
             print('Installing ' + package)
             os.system('yum install -y ' + package + '>/dev/null')
             print('Successful\n')
+            os.system('python3 -m pip install --user pipx' '>/dev/null')
+            s.system('python3 -m pipx ensurepath' '>/dev/null')
     except:
         print('Unsuccessful')
 
@@ -31,18 +35,15 @@ def install_packages():
 # Install required packages via pip
 def pip_down():
     print('\nInstalling OpenStack HEAT requirements via pip')
-    os_list = ['setuptools==36.2.7',
-               '-U pip==20.1.1',
-               '--ignore-installed os-apply-config==11.2.0',
-               '--ignore-installed os-collect-config==5.0.0',
-               'os-refresh-config==10.4.0',
-               'dib-utils==0.0.11',
-               '-U decorator',
+    os_list = ['os-apply-config',
+               'os-collect-config',
+               'os-refresh-config',
+               'dib-utils',
                'ansible==2.4.3.0']
     try:
         for package in os_list:
             print('Installing ' + package)
-            os.system('pip install ' + package)
+            os.system('/root/.local/bin/pipx install ' + package)
             print('Successful')
     except:
         print('Unsuccessful')
