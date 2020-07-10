@@ -28,8 +28,6 @@ def install_packages():
             print('Successful\n')
     except:
         print('Unsuccessful')
-    os.system('python3 -m pip install --user pipx' '>/dev/null')
-    os.system('python3 -m pipx ensurepath' '>/dev/null')
 
 
 # Install required packages via pip
@@ -43,8 +41,7 @@ def pip_down():
     try:
         for package in os_list:
             print('Installing ' + package)
-            os.environ['PATH'] = '/root/.local/bin:/bin:/usr/sbin:/usr/bin'
-            os.system('pipx install ' + package)
+            os.system('python3 -m pip install ' + package)
             print('Successful')
     except:
         print('Unsuccessful')
