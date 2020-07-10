@@ -52,7 +52,7 @@ def pip_down():
 # Remove git repo if it exist (should never come up but might as well)
 # Clone git repo that has all our configuration files
 def download_git():
-    endpoint = 'https://github.com/kmcjunk/hotstrapper/archive/master.zip'
+    endpoint = 'https://github.com/rockymccamey/hotstrapper/archive/master.zip'
     os.system('wget {}'.format(endpoint))
     os.system('unzip master.zip')
 
