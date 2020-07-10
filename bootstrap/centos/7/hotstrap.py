@@ -43,7 +43,8 @@ def pip_down():
     try:
         for package in os_list:
             print('Installing ' + package)
-            os.system('/root/.local/bin/pipx install ' + package)
+            os.environ['PATH'] = '/root/.local/bin'
+            os.system('pipx install ' + package)
             print('Successful')
     except:
         print('Unsuccessful')
