@@ -27,7 +27,7 @@ def install_packages():
             os.system('yum install -y ' + package + '>/dev/null')
             print('Successful\n')
             os.system('python3 -m pip install --user pipx' '>/dev/null')
-            s.system('python3 -m pipx ensurepath' '>/dev/null')
+            os.system('python3 -m pipx ensurepath' '>/dev/null')
     except:
         print('Unsuccessful')
 
