@@ -74,9 +74,9 @@ def configurate():
         print('hotstrapper-master/bootstrap/centos/7/' + file + '\t->\t' + '/' + file)
         shutil.move('hotstrapper-master/bootstrap/centos/7/' + file, '/' + file)
     for i in range(3):
-        os.chmod('/' + file_list[i], 0700)
+        os.chmod('/' + file_list[i], 700)
     for i in range(3, 6):
-        os.chmod('/' + file_list[i], 0755)
+        os.chmod('/' + file_list[i], 755)
         # os.chmod('/' + file, 0700)
 
 
