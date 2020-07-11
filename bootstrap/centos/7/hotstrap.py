@@ -36,8 +36,7 @@ def pip_down():
     os_list = ['os-apply-config',
                'os-collect-config',
                'os-refresh-config',
-               'dib-utils',
-               'ansible==2.4.3.0']
+               'dib-utils']
     try:
         for package in os_list:
             print('Installing ' + package)
@@ -45,6 +44,7 @@ def pip_down():
             print('Successful')
     except:
         print('Unsuccessful')
+    os.system('pip install ansible==2.4.3.0'
 
 
 # Remove git repo if it exist (should never come up but might as well)
