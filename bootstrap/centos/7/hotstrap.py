@@ -44,7 +44,7 @@ def pip_down():
             print('Successful')
     except:
         print('Unsuccessful')
-    os.system('pip install ansible==2.4.3.0'
+    os.system('pip install ansible==2.4.3.0')
 
 
 # Remove git repo if it exist (should never come up but might as well)
