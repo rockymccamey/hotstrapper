@@ -23,7 +23,7 @@ def install_packages():
     try:
         for package in package_list:
             print('Installing ' + package)
-            os.system('apt-get install ' + package + '>/dev/null')
+            os.system('apt-get install -y ' + package + '>/dev/null')
             print('Successful\n')
     except:
         print('Unsuccessful')
